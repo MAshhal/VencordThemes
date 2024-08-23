@@ -3,7 +3,7 @@
 ```mermaid
 %%{
   init: {
-    'theme': 'dark'
+    'theme': 'forest'
   }
 }%%
 

@@ -7,30 +7,7 @@
   }
 }%%
 
-graph LR
-  subgraph :core
-    :core:designsystem["designsystem"]
-    :core:common["common"]
-    :core:data["data"]
-    :core:model["model"]
-    :core:ui["ui"]
-  end
-  subgraph :data
-    :data:prayer["prayer"]
-    :data:datastore-preferences["datastore-preferences"]
-    :data:location["location"]
-  end
-  subgraph :database
-    :database:location["location"]
-  end
-  subgraph :feature
-    :feature:calendar["calendar"]
-    :feature:settings["settings"]
-    :feature:search["search"]
-    :feature:home["home"]
-    :feature:onboarding["onboarding"]
-    :feature:auqat-salah["auqat-salah"]
-  end
+graph TB
   :feature:calendar --> :core:designsystem
   :feature:calendar --> :core:common
   :feature:calendar --> :core:data
@@ -92,4 +69,27 @@ graph LR
   :core:ui --> :core:common
   :core:ui --> :core:model
   :data:datastore-preferences --> :core:model
+
+classDef android-library fill:#3BD482,stroke:#fff,stroke-width:2px,color:#fff;
+classDef unknown fill:#676767,stroke:#fff,stroke-width:2px,color:#fff;
+classDef android-application fill:#2C4162,stroke:#fff,stroke-width:2px,color:#fff;
+class :feature:calendar android-library
+class :core:designsystem android-library
+class :core:common android-library
+class :core:data android-library
+class :core:model android-library
+class :core:ui android-library
+class :data:prayer android-library
+class :benchmarks unknown
+class :app android-application
+class :database:location android-library
+class :feature:settings android-library
+class :feature:search android-library
+class :background android-library
+class :feature:home android-library
+class :feature:onboarding android-library
+class :feature:auqat-salah android-library
+class :data:datastore-preferences android-library
+class :data:location android-library
+
 ```
